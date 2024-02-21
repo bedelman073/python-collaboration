@@ -12,6 +12,12 @@ def main():
         print("Your to do list has now been updated")
     if ans==2:
         markcomplete(todo_list)
+        print("Your to do list has now been updated")
+    if ans==3:
+        print(todo_list)
+    if ans==4:
+        deltasks(todo_list)
+        print("Your to do list has now been updated")
 
 main()
 
@@ -26,3 +32,9 @@ def markcomplete(todo_list):
     for i in range(num_tasks):
         target=input("Enter the name of the task you want to mark as complete: ")
         todo_list[target]="complete"
+
+def deltasks(todo_list):
+    num_tasks=int(input("Enter the amount of tasks you want to delete: "))
+    for i in range(num_tasks):
+        target=input("Enter the name of the task you want to delete: ")
+        del todo_list[target]

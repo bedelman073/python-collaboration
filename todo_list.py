@@ -16,6 +16,11 @@ def deltasks(todo_list):
         target=input("Enter the name of the task you want to delete: ")
         del todo_list[target]
 
+def write_to_file(dict):
+    with open("My_Todo_List.txt","w") as file:
+        file.write(str(dict))
+        file.close()
+
 def main():
     run_prog=True
     todo_list={}
@@ -25,7 +30,8 @@ def main():
     1.) Add a new task
     2.) Mark a task as complete
     3.) View your list
-    4.) Delete tasks""")
+    4.) Delete tasks
+    5.) Save to file""")
         ans=int(input("Enter your response here: "))
         if ans==1:
             addtasks(todo_list)
@@ -38,6 +44,9 @@ def main():
         if ans==4:
             deltasks(todo_list)
             print("Your to do list has now been updated")
+        if ans==5:
+            write_to_file(todo_list)
+            print("Your file has been created")
         cont=int(input("Do you want to access another function? Enter 0 for no and 1 for yes: "))
         if cont==0:
             run_prog=False

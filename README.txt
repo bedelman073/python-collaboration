@@ -1,1 +1,1 @@
-Our project will be xyz
+Our project will be a differential equation calculator 
